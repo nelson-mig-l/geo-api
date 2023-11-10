@@ -12,3 +12,7 @@
 
 * `export PYGEOAPI_CONFIG=geo-api-config.yml`
 * `flask --app main run`
+
+## TODO
+
+* Replace `oapi` path with `openapi`
