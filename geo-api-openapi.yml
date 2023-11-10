@@ -882,7 +882,7 @@ paths:
       - stac
 servers:
 - description: pygeoapi provides an API to geospatial data
-  url: https://musical-waddle-r9pj9xrjjw357vw-5000.app.github.dev/oapi
+  url: https://musical-waddle-r9pj9xrjjw357vw-5000.app.github.dev/openapi
 tags:
 - description: pygeoapi provides an API to geospatial data
   externalDocs:
