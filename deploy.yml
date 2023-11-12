@@ -1,0 +1,23 @@
+features:
+  - 'python latest'
+  - ssl
+  - 'ssl always'
+nginx:
+  root: public_html/public
+  passenger:
+    enabled: 'on'
+    app_root: public_html
+    python: .pyenv/shims/python
+    env_var_list:
+      - PYGEOAPI_CONFIG=geo-api-config.yml
+      - PYGEOAPI_OPENAPI=geo-api-openapi.yml
+source: clear
+commands:
+  - 'git clone https://github.com/nelson-mig-l/geo-api.git'
+  - "sed -i 's/musical-waddle-r9pj9xrjjw357vw-5000.app.github.dev/fikvesi.domcloud.io/g' ./geo-api/geo-api-config.yml"
+  - 'cp -r ./geo-api/* .'
+  - 'cp main.py passenger_wsgi.py'
+  - 'pip install -r requirements.txt'
+  - 'export PYGEOAPI_CONFIG=geo-api-config.yml'
+  - 'export PYGEOAPI_OPENAPI=geo-api-openapi.yml'
+  - 'pygeoapi openapi generate $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI'
