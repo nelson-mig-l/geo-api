@@ -1,3 +1,4 @@
+source: https://github.com/nelson-mig-l/geo-api.git
 features:
   - 'python latest'
   - ssl
@@ -7,13 +8,11 @@ nginx:
   passenger:
     enabled: 'on'
     app_root: public_html
-    python: .pyenv/shims/python
+    app_start_command: 'flask --app main run -p $PORT'
     env_var_list:
       - PYGEOAPI_CONFIG=geo-api-config.yml
       - PYGEOAPI_OPENAPI=geo-api-openapi.yml
-source: clear
 commands:
-  - 'git clone https://github.com/nelson-mig-l/geo-api.git'
   - "sed -i 's/musical-waddle-r9pj9xrjjw357vw-5000.app.github.dev/fikvesi.domcloud.io/g' ./geo-api/geo-api-config.yml"
   - 'cp -r ./geo-api/* .'
   - 'cp main.py passenger_wsgi.py'
