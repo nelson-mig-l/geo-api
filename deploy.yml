@@ -1,8 +1,8 @@
-source: https://github.com/nelson-mig-l/geo-api.git
 features:
   - 'python latest'
   - ssl
   - 'ssl always'
+source: 'https://github.com/nelson-mig-l/geo-api.git'
 nginx:
   root: public_html/public
   passenger:
@@ -13,9 +13,7 @@ nginx:
       - PYGEOAPI_CONFIG=geo-api-config.yml
       - PYGEOAPI_OPENAPI=geo-api-openapi.yml
 commands:
-  - "sed -i 's/musical-waddle-r9pj9xrjjw357vw-5000.app.github.dev/fikvesi.domcloud.io/g' ./geo-api/geo-api-config.yml"
-  - 'cp -r ./geo-api/* .'
-  - 'cp main.py passenger_wsgi.py'
+  - "sed -i 's/musical-waddle-r9pj9xrjjw357vw-5000.app.github.dev/fikvesi.domcloud.io/g' geo-api-config.yml"
   - 'pip install -r requirements.txt'
   - 'export PYGEOAPI_CONFIG=geo-api-config.yml'
   - 'export PYGEOAPI_OPENAPI=geo-api-openapi.yml'
