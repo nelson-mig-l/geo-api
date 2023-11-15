@@ -13,6 +13,7 @@
 * `export PYGEOAPI_CONFIG=geo-api-config.yml`
 * `export PYGEOAPI_OPENAPI=geo-api-openapi.yml`
 * `pygeoapi openapi generate $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI`
+* `passenger-config restart-app ~`
 
 ## Launch
 
